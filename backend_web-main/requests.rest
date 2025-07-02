@@ -1,0 +1,116 @@
+### Normal user login
+POST   http://localhost:5000/api/users/login
+Content-Type: application/json
+
+{
+  "email": "alice.smith@example.com",
+  "password": "AlicePass456"
+}
+
+### clubmember Login
+POST http://localhost:5000/api/users/login
+Content-Type: application/json
+
+{
+  "email": "priya.kumar@example.com",
+  "password": "PriyaPass789"
+}
+
+
+###  registering a Normal User
+
+POST http://localhost:5000/api/users/register
+Content-Type: application/json
+
+{
+  "firstName": "Alice",
+  "lastName": "Smith",
+  "email": "alice.smith@example.com",
+  "password": "AlicePass456",
+  "confirmPassword": "AlicePass456"
+}
+
+### Registering Club Member
+
+POST http://localhost:5000/api/users/register
+Content-Type: application/json
+
+{
+  "firstName": "Priya",
+  "lastName": "Kumar",
+  "email": "priya.kumar@example.com",
+  "password": "PriyaPass789",
+  "confirmPassword": "PriyaPass789",
+  "isClub": true
+}
+
+### Registering Another User
+POST http://localhost:5000/api/users/register
+Content-Type: application/json
+
+{
+  "firstName": "Bob",
+  "lastName": "Lee",
+  "email": "bram815@gmail.com",
+  "password": "BobPass123",
+  "confirmPassword": "BobPass123"
+}
+
+### Another User Login
+POST http://localhost:5000/api/users/login
+Content-Type: application/json
+
+{
+  "email": "bram815@gmail.com",
+  "password": "BobPass123"
+}
+
+### Getting Projects
+GET  http://localhost:5000/api/mid-projects/build/mid-projects
+
+### Getting Projects on deployment server
+GET  https://backend-web-1-cr1w.onrender.com/
+
+### Normal User
+GET  http://localhost:5000/api/mid-projects/build/mid-project/6853036c48df175f16f94926
+Authorization: Bearer 
+
+###  Premium User or Club member
+GET  http://localhost:5000/api/mid-projects/build/mid-project/6853036c48df175f16f94926
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjJkYmExMzUwYTQ3NjZlNGM5YzY1NCIsImlhdCI6MTc1MTMwOTIxNywiZXhwIjoxNzUxOTE0MDE3fQ.wXl94JiSotebFNBMU432et5f5kcEzru5KAFyjQGo-u0
+###
+GET https://backend-web-1-cr1w.onrender.com/api/ui-library
+
+
+### Submitting Transaction ID
+POST http://localhost:5000/api/transactions/submit-transaction
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjJkYmExMzUwYTQ3NjZlNGM5YzY1NCIsImlhdCI6MTc1MTMwOTIxNywiZXhwIjoxNzUxOTE0MDE3fQ.wXl94JiSotebFNBMU432et5f5kcEzru5KAFyjQGo-u0
+
+{
+  "email": "bram815@gmail.com",
+  "transactionId": "SOME_TRANSACTION_ID",
+  "immediateAccess": true
+}
+
+### transactions List
+GET https://backend-web-1-cr1w.onrender.com/api/transactions/admin/club/transactions
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjJkODI1ZmQ4YmYyM2I0NjBhYzM5OCIsImlhdCI6MTc1MTMwODMyNiwiZXhwIjoxNzUxOTEzMTI2fQ.5teipkczCCO9n5N2WdBq_t5d1fGJoxbxl3aY2FCg7V4
+
+### Admin Rejection Endpoint
+POST http://localhost:5000/api/transactions/admin/club/reject
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjJkODI1ZmQ4YmYyM2I0NjBhYzM5OCIsImlhdCI6MTc1MTMwODMyNiwiZXhwIjoxNzUxOTEzMTI2fQ.5teipkczCCO9n5N2WdBq_t5d1fGJoxbxl3aY2FCg7V4
+
+{
+  "transactionId": "SOME_TRANSACTION_ID"
+}
+
+### Admin Approve Transaction
+POST http://localhost:5000/api/transactions/admin/club/approve
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjJkODI1ZmQ4YmYyM2I0NjBhYzM5OCIsImlhdCI6MTc1MTMwODMyNiwiZXhwIjoxNzUxOTEzMTI2fQ.5teipkczCCO9n5N2WdBq_t5d1fGJoxbxl3aY2FCg7V4
+
+{
+  "transactionId": "SOME_TRANSACTION_ID"
+}
