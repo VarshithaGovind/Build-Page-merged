@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* Header Gradient (ALWAYS blue to purple, never reverse) */
+.header-gradient {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  background: linear-gradient(90deg, #007bff 0%, #0600a6 50%, #b4a1f4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  transition: all 0.3s ease;
+  font-size: 3.7rem;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+  .header-gradient {
+    font-size: 2.5rem;
+    letter-spacing: 1.2px;
+  }
+}
+@media (max-width: 480px) {
+  .header-gradient {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+}
+
+/* Section header (mini/mid/major headings) - solid blue */
+.section-header {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: #007bff;
+  font-size: 2.5rem;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .section-header {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+}
+@media (max-width: 480px) {
+  .section-header {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* Subsection header */
+.subsection-header {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Gradient Hover Button */
+.gradient-hover {
+  background: linear-gradient(90deg, #007bff 0%, #0600a6 50%, #b4a1f4 100%);
+  color: #fff !important;
+  transition: all 0.3s ease;
+  border: none;
+}
+.gradient-hover:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 2px 16px 0 #b4a1f4aa;
+}
+
+/* Body and backgrounds */
+body {
+  font-family: system-ui, 'Inter', sans-serif;
+  background: linear-gradient(135deg, #daf0fa 0%, #bceaff 50%, #bceaff 100%);
+  min-height: 100vh;
+}
+
+body.dark {
+  background: linear-gradient(135deg, #020b23 0%, #001233 50%, #0a1128 100%);
+}
+
+/* Hide scrollbars for custom scroll containers */
+.hide-scrollbar::-webkit-scrollbar,
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar, .no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
